@@ -19,7 +19,7 @@ const app = new Koa();
 
 if (!isDev) {
   // 开发的时候用import需要放在最外面(这个文件可能没有)
-  const serverEntry = require('../dist/server-entry')
+  const serverEntry = require('../dist/server-entry33')
   let template = fs.readFileSync(path.join(__dirname, '../dist/server.ejs'), 'utf8')
   app.use(async (ctx, next) => {
     ctx.template = template;
