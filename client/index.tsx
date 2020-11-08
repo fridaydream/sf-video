@@ -5,7 +5,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import { AudioPlayerProvider } from "react-use-audio-player"
 
 import App from '@/pages/App'
-import { storesContext, CounterStore, ThemeStore, AppStore, VideoStore } from "@/store/store";
+import { storesContext, ThemeStore, VideoStore } from "@/store/store";
 import { theme } from './theme'
 
 const root = document.getElementById('root')
@@ -13,10 +13,7 @@ const root = document.getElementById('root')
 const initialState = window.__INITIAL__STATE__ || {}
 
 const themeStore = new ThemeStore(initialState.themeStore)
-const counterStore = new CounterStore()
-const appStore = new AppStore()
 const videoStore = new VideoStore(initialState.videoStore)
-appStore.init(initialState.appStore?.user)
 
 const createApp = (TheApp: React.ComponentType) => {
   const Main = () => {
@@ -37,8 +34,6 @@ const render = (Component: React.ComponentType) => {
     <storesContext.Provider
       value={{
         themeStore,
-        counterStore,
-        appStore,
         videoStore
       }}
     >

@@ -1,4 +1,3 @@
-
 import Koa from 'koa'
 import ReactDomServer from 'react-dom/server'
 import ejs from 'ejs'

@@ -4,8 +4,6 @@ import { Route, Redirect, matchPath } from 'react-router-dom'
 import { FC, RouteItem } from './types'
 
 import Home from '@/pages/home/Index'
-import Info from '@/pages/user/Info'
-import Login from '@/pages/user/Login'
 import Play from '@/pages/play/Index'
 import List from '@/pages/list/Index'
 
@@ -14,8 +12,6 @@ export default () => (
     <Route path="/" exact render={() => <Redirect to="/list" />} />
     <Route path="/list" component={List} />
     <Route path="/home" exact component={Home} />
-    <Route path="/user/info" component={Info} />
-    <Route path="/user/login" component={Login} />
     <Route path="/playing" component={Play} />
   </>
 )
@@ -34,22 +30,6 @@ export const routes = [
     exact: true,
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     Component: () => (require('../pages/list/Index').default), // 这里使用一个function包裹为了让它延迟require
-    // controller: 'page',
-    // handler: 'index'
-  },
-  {
-    path: '/user/info',
-    exact: true,
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    Component: () => (require('../pages/user/Info').default),
-    // controller: 'page',
-    // handler: 'index'
-  },
-  {
-    path: '/user/login',
-    exact: true,
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    Component: () => (require('../pages/user/Login').default),
     // controller: 'page',
     // handler: 'index'
   },
