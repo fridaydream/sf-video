@@ -63,17 +63,17 @@ if (!isDev) {
     await next()
   });
   app.use(serverRender);
-  app.use(async (ctx, next) => {
-    console.log('ctx.path', ctx.path)
-    if (ctx.path.indexOf('/public/') === 0) {
-      ctx.path = ctx.path.slice('/public/'.length);
-      await send(ctx, ctx.path, {
-        index: 'index.html',
-        root: path.join(__dirname, '../dist')
-      })
-    }
-    await next()
-  })
+  // app.use(async (ctx, next) => {
+  //   console.log('ctx.path', ctx.path)
+  //   if (ctx.path.indexOf('/public/') === 0) {
+  //     ctx.path = ctx.path.slice('/public/'.length);
+  //     await send(ctx, ctx.path, {
+  //       index: 'index.html',
+  //       root: path.join(__dirname, '../dist')
+  //     })
+  //   }
+  //   await next()
+  // })
 } else {
   devStatic(app)
 }
