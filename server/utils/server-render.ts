@@ -19,17 +19,16 @@ const getStoreState = (stores: IStores) => {
 
 export default async (ctx: Koa.Context, next: () => void) => {
   // @ts-ignore
-  console.log('server render in ===', ctx.session.user);
   const serverBundle = ctx.serverBundle;
   const template = ctx.template;
   const createStoreMap = serverBundle.createStoreMap
   const stores: IStores = createStoreMap()
 
-  const user = ctx.session?.user
-  if (user) {
-    stores.appStore.user.info = user
-    stores.appStore.user.isLogin = true
-  }
+  // const user = ctx.session?.user
+  // if (user) {
+  //   stores.appStore.user.info = user
+  //   stores.appStore.user.isLogin = true
+  // }
   // stores.themeStore.theme = 'dark'
   const createApp = serverBundle.default
   const routerContext: RouterContext = {}
