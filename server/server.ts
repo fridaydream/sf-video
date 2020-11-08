@@ -15,18 +15,6 @@ const isDev = false
 
 const app = new Koa();
 
-const router = new Router<DefaultState, Context>({
-  prefix: '/api'
-});
-
-// router.post('/user/login', handleLogin)
-// router.get('/user/info', handleUserInfo)
-router.get('/video/info', handleVideo)
-
-app
-  .use(router.routes())
-  .use(router.allowedMethods());
-
 // app.use(favicon('http://www.baidu.com/favicon.ico'));
 
 if (!isDev) {
@@ -57,5 +45,17 @@ if (!isDev) {
 // app.listen(3333, () => {
 //   console.log('server is listening in 3333')
 // })
+
+const router = new Router<DefaultState, Context>({
+  prefix: '/api'
+});
+
+// router.post('/user/login', handleLogin)
+// router.get('/user/info', handleUserInfo)
+router.get('/video/info', handleVideo)
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 module.exports = app.callback()
