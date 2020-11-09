@@ -17,7 +17,7 @@ const app = new Koa();
 
 // app.use(favicon('http://www.baidu.com/favicon.ico'));
 
-if (!isDev) {
+// if (!isDev) {
   // 开发的时候用import需要放在最外面(这个文件可能没有)
   const serverEntry = require('./server-entry.js')
 
@@ -39,7 +39,7 @@ if (!isDev) {
   //   }
   //   await next()
   // })
-}
+// }
 
 
 const router = new Router<DefaultState, Context>({
