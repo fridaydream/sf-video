@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const baseUrl = process.env.API_BASE || ''
-const baseUrl = ''
+const baseUrl = process.env.API_BASE || ''
+// const baseUrl = ''
 
 console.log('baseUrl', baseUrl);
 interface AxiosParams {

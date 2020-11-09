@@ -64,19 +64,19 @@ export default (request: NowRequest, response: NowResponse) => {
   const id = request.query.id
   // 如果没有id，查询所有
   if (!id) {
-    return response.status(200).send({
+    return response.status(200).json({
       data: videoList,
       errno: 0
     })
   }
   const result = videoList.find(li => li.id === id)
   if (result) {
-    return response.status(200).send({
+    return response.status(200).json({
       data: result,
       errno: 0
     })
   }
-  response.status(200).send({
+  response.status(200).json({
     message: 'id is not exist',
     errno: 4004
   })
