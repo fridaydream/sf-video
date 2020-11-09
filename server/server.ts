@@ -19,7 +19,7 @@ const app = new Koa();
 
 if (!isDev) {
   // 开发的时候用import需要放在最外面(这个文件可能没有)
-  const serverEntry = require('../dist/server-entry33')
+  const serverEntry = require('../dist/server-entry')
   let template = fs.readFileSync(path.join(__dirname, '../dist/server.ejs'), 'utf8')
   app.use(async (ctx, next) => {
     ctx.template = template;
@@ -42,9 +42,6 @@ if (!isDev) {
   devStatic(app)
 }
 
-// app.listen(3333, () => {
-//   console.log('server is listening in 3333')
-// })
 
 const router = new Router<DefaultState, Context>({
   prefix: '/api'
@@ -58,4 +55,8 @@ app
   .use(router.routes())
   .use(router.allowedMethods());
 
-module.exports = app.callback()
+
+app.listen(3333, () => {
+  console.log('server is listening in 3333')
+})
+// module.exports = app.callback()
