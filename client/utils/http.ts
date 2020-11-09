@@ -2,7 +2,8 @@ import axios from 'axios'
 
 axios.defaults.withCredentials = true
 
-const baseUrl = process.env.API_BASE || ''
+// const baseUrl = process.env.API_BASE || ''
+const baseUrl = ''
 
 console.log('baseUrl', baseUrl);
 interface AxiosParams {
