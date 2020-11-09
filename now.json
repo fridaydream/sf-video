@@ -18,6 +18,10 @@
     {
       "src": "/playing",
       "dest": "server/server.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "server/server.ts"
     }
   ]
 }
