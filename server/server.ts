@@ -56,7 +56,7 @@ app
   .use(router.allowedMethods());
 
 
-app.listen(3333, () => {
-  console.log('server is listening in 3333')
-})
-// module.exports = app.callback()
+// app.listen(3333, () => {
+//   console.log('server is listening in 3333')
+// })
+module.exports = app.callback()
