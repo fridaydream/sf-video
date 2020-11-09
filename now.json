@@ -8,11 +8,15 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/video/info",
       "dest": "server/server.ts"
     },
     {
-      "src": "/api/video/info",
+      "src": "/list",
+      "dest": "server/server.ts"
+    },
+    {
+      "src": "/playing/*",
       "dest": "server/server.ts"
     }
   ]
