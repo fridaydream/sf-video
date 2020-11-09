@@ -41,7 +41,7 @@ var fs_1 = require("fs");
 var path_1 = require("path");
 var router_1 = require("@koa/router");
 var handle_video_1 = require("./utils/handle-video");
-var dev_static_1 = require("./utils/dev-static");
+// import devStatic from './utils/dev-static'
 // import favicon from 'koa-favicon'
 var server_render_1 = require("./utils/server-render");
 // const isDev = process.env.NODE_ENV !== 'production'
@@ -77,9 +77,6 @@ if (!isDev) {
     //   }
     //   await next()
     // })
-}
-else {
-    dev_static_1["default"](app);
 }
 var router = new router_1["default"]({
     prefix: '/api'

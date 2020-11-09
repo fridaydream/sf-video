@@ -5,7 +5,7 @@ import send from 'koa-send'
 import session from 'koa-session'
 import Router from '@koa/router'
 import handleVideo from './utils/handle-video'
-import devStatic from './utils/dev-static'
+// import devStatic from './utils/dev-static'
 
 // import favicon from 'koa-favicon'
 import serverRender from './utils/server-render'
@@ -39,8 +39,6 @@ if (!isDev) {
   //   }
   //   await next()
   // })
-} else {
-  devStatic(app)
 }
 
 
