@@ -1,3 +1,5 @@
+import { NowRequest, NowResponse } from '@vercel/node'
+
 // import { videoList } from '../../config/video-config'
 const videoList = [{
   id: '3400001',
@@ -57,10 +59,26 @@ const videoList = [{
   poster: '//erp-1258916733.cos.ap-shanghai.myqcloud.com/fe-share-pic/ssr.png',
 }]
 
-// hello.js
-module.exports = (ctx) => {
-  ctx.body = {
-    data: videoList,
-    errno: 0
+
+export default (request: NowRequest, response: NowResponse) => {
+  const id = request.query.id
+  // 如果没有id，查询所有
+  if (!id) {
+    return response.status(200).send({
+      data: videoList,
+      errno: 0
+    })
   }
+  const result = videoList.find(li => li.id === id)
+  if (result) {
+    return response.status(200).send({
+      data: result,
+      errno: 0
+    })
+  }
+  response.status(200).send({
+    message: 'id is not exist',
+    errno: 4004
+  })
+
 }

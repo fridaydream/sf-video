@@ -6,7 +6,7 @@
       "use": "@now/node"
     },
     {
-      "src": "server/list.js",
+      "src": "server/list.ts",
       "use": "@now/node"
     }
   ],
@@ -17,7 +17,7 @@
     },
     {
       "src": "/list",
-      "dest": "server/list.js"
+      "dest": "server/list.ts"
     },
     {
       "src": "/playing",
