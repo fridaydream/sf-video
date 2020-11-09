@@ -4,6 +4,10 @@
     {
       "src": "server/server.ts",
       "use": "@now/node"
+    },
+    {
+      "src": "server/list.js",
+      "use": "@now/node"
     }
   ],
   "routes": [
@@ -13,7 +17,7 @@
     },
     {
       "src": "/list",
-      "dest": "server/server.ts"
+      "dest": "server/list.js"
     },
     {
       "src": "/playing",
