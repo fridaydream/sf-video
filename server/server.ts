@@ -15,6 +15,19 @@ const isDev = false
 
 const app = new Koa();
 
+
+const router = new Router<DefaultState, Context>({
+  prefix: '/api'
+});
+
+// router.post('/user/login', handleLogin)
+// router.get('/user/info', handleUserInfo)
+router.get('/video/info', handleVideo)
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
+
 // app.use(favicon('http://www.baidu.com/favicon.ico'));
 
 // if (!isDev) {
@@ -41,18 +54,6 @@ const app = new Koa();
   // })
 // }
 
-
-const router = new Router<DefaultState, Context>({
-  prefix: '/api'
-});
-
-// router.post('/user/login', handleLogin)
-// router.get('/user/info', handleUserInfo)
-router.get('/video/info', handleVideo)
-
-app
-  .use(router.routes())
-  .use(router.allowedMethods());
 
 
 // app.listen(3333, () => {
