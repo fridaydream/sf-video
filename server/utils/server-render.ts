@@ -59,5 +59,4 @@ export default async (ctx: Koa.Context, next: () => void) => {
     materialCss: sheetsRegistry.toString()
   })
   ctx.body = html;
-  await next();
 }
