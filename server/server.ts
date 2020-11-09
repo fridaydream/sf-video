@@ -1,10 +1,7 @@
 import Koa, { DefaultState, Context } from 'koa'
 import fs from 'fs'
 import path from 'path'
-import send from 'koa-send'
-import session from 'koa-session'
-import Router from '@koa/router'
-import handleVideo from './utils/handle-video'
+
 // import devStatic from './utils/dev-static'
 
 // import favicon from 'koa-favicon'
@@ -14,19 +11,6 @@ import serverRender from './utils/server-render'
 const isDev = false
 
 const app = new Koa();
-
-
-const router = new Router<DefaultState, Context>({
-  prefix: '/api'
-});
-
-// router.post('/user/login', handleLogin)
-// router.get('/user/info', handleUserInfo)
-router.get('/video/info', handleVideo)
-
-app
-  .use(router.routes())
-  .use(router.allowedMethods());
 
 // app.use(favicon('http://www.baidu.com/favicon.ico'));
 
