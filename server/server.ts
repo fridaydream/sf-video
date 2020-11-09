@@ -21,7 +21,7 @@ if (!isDev) {
   // 开发的时候用import需要放在最外面(这个文件可能没有)
   const serverEntry = require('../dist/server-entry.js')
 
-  let template = fs.readFileSync(path.join(__dirname, '../dist/server.ejs'), 'utf8')
+  let template = fs.readFileSync(path.join(__dirname, '../dist/server.ejs')).toString('utf8')
   app.use(async (ctx, next) => {
     ctx.template = template;
     ctx.serverBundle = serverEntry;
