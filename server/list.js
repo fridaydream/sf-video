@@ -58,9 +58,9 @@ const videoList = [{
 }]
 
 // hello.js
-module.exports = (req, res) => {
-  res.end({
+module.exports = (ctx) => {
+  ctx.body = {
     data: videoList,
     errno: 0
-  });
+  }
 }
