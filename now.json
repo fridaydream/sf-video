@@ -10,6 +10,10 @@
     {
       "src": "/(.*)",
       "dest": "server/server.ts"
+    },
+    {
+      "src": "/api/video/info",
+      "dest": "server/server.ts"
     }
   ]
 }

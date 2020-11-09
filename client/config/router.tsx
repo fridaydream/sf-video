@@ -9,7 +9,7 @@ import List from '@/pages/list/Index'
 
 export default () => (
   <>
-    <Route path="/" exact render={() => <Redirect to="/list" />} />
+    <Route path="/" exact render={() => <Redirect to="/home" />} />
     <Route path="/list" component={List} />
     <Route path="/home" exact component={Home} />
     <Route path="/playing" component={Play} />
