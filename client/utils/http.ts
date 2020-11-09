@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-axios.defaults.withCredentials = true
-
 // const baseUrl = process.env.API_BASE || ''
 const baseUrl = ''
 

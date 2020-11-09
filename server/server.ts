@@ -38,9 +38,5 @@ const app = new Koa();
   // })
 // }
 
-
-
-// app.listen(3333, () => {
-//   console.log('server is listening in 3333')
-// })
+app.listen()
 module.exports = app.callback()
