@@ -42,15 +42,15 @@ if (!isDev) {
   devStatic(app)
 }
 
-const router = new Router<DefaultState, Context>({
-  prefix: '/api'
-});
+// const router = new Router<DefaultState, Context>({
+//   prefix: '/api'
+// });
 
-router.get('/video/info', handleVideo)
+// router.get('/video/info', handleVideo)
 
-app
-  .use(router.routes())
-  .use(router.allowedMethods());
+// app
+//   .use(router.routes())
+//   .use(router.allowedMethods());
 
 app.listen(3333)
 module.exports = app.callback()
