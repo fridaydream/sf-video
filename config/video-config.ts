@@ -51,7 +51,14 @@ export const videoList = [{
   id: '3400008',
   author: '陈盼',
   title: 'ssr一期',
-  date: '2020-09-12',
+  date: '2020-10-06',
   url: '//erp-1258916733.cos.ap-shanghai.myqcloud.com/fe_share/react-ssr.mov',
   poster: '//erp-1258916733.cos.ap-shanghai.myqcloud.com/fe-share-pic/ssr.png',
-},]
+}, {
+  id: '3400009',
+  author: '陈盼',
+  title: 'ssr二期',
+  date: '2020-10-10',
+  url: '//erp-1258916733.cos.ap-shanghai.myqcloud.com/fe_share/ssr2.mov',
+  poster: '//erp-1258916733.cos.ap-shanghai.myqcloud.com/fe-share-pic/ssr.png',
+}]
