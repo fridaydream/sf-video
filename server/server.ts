@@ -1,22 +1,22 @@
 import Koa, { DefaultState, Context } from 'koa'
 import fs from 'fs'
 import path from 'path'
-import Router from '@koa/router'
+// import Router from '@koa/router'
 
-import devStatic from './utils/dev-static'
-import handleVideo from './utils/handle-video'
+// import devStatic from './utils/dev-static'
+// import handleVideo from './utils/handle-video'
 
 // import favicon from 'koa-favicon'
 import serverRender from './utils/server-render'
 
 // const isDev = process.env.NODE_ENV !== 'production'
-const isDev = false
+// const isDev = false
 
 const app = new Koa();
 
 // app.use(favicon('http://www.baidu.com/favicon.ico'));
 
-if (!isDev) {
+// if (!isDev) {
   // 开发的时候用import需要放在最外面(这个文件可能没有)
   const serverEntry = require('./server-entry.js')
 
@@ -38,9 +38,9 @@ if (!isDev) {
   //   }
   //   await next()
   // })
-} else {
-  devStatic(app)
-}
+// } else {
+//   devStatic(app)
+// }
 
 // const router = new Router<DefaultState, Context>({
 //   prefix: '/api'
