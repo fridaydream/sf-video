@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "server/server.ts",
-      "use": "@now/node-server"
+      "use": "@now/node"
     },
     {
       "src": "server/list.ts",
