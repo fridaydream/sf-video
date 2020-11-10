@@ -6,10 +6,8 @@ import Router from '@koa/router'
 import devStatic from './utils/dev-static'
 import handleVideo from './utils/handle-video'
 
-import addFile from './file'
 // import favicon from 'koa-favicon'
 import serverRender from './utils/server-render'
-
 
 // const isDev = process.env.NODE_ENV !== 'production'
 const isDev = false
@@ -19,7 +17,15 @@ const app = new Koa();
 // app.use(favicon('http://www.baidu.com/favicon.ico'));
 
 if (!isDev) {
-  app.use(addFile);
+  // 开发的时候用import需要放在最外面(这个文件可能没有)
+  const serverEntry = require('./server-entry.js')
+
+  let template = fs.readFileSync(path.join(__dirname, './server.ejs'), 'utf-8')
+  app.use(async (ctx, next) => {
+    ctx.template = template;
+    ctx.serverBundle = serverEntry;
+    await next()
+  });
   app.use(serverRender);
   // app.use(async (ctx, next) => {
   //   console.log('ctx.path', ctx.path)
